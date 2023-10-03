@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects List</title>
+</head>
+<body>
+    <h1>Projects List</h1>
+    <ul>
+        {% for project in projects %}
+            <li>
+                {{ project.name }} - {{ project.description }}
+                <a href="/edit_project/{{ project.id }}">Edit</a>
+                <a href="/remove_project/{{ project.id }}">Remove</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/add_project">Add Project</a>
+</body>
+</html>
